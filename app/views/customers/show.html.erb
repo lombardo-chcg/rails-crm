@@ -1,0 +1,6 @@
+<h1> Customer Data</h1>
+<p><%= @customer.name %></p>
+<p><%= @customer.contact_info %></p>
+
+<%= link_to "Edit", edit_customer_path(@customer) %>
+<%= link_to "Back to Customer List", customers_path %>
