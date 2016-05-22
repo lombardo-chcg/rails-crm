@@ -2,5 +2,18 @@
 <p><%= @customer.name %></p>
 <p><%= @customer.contact_info %></p>
 
+<% if @customer.followups.any? %>
+  <h4> follow ups </h4>
+  <%= render @customer.followups %>
+<% end %>
+
+<h4> add a follow up note: </h4>
+<%= render 'followups/form' %>
+
 <%= link_to "Edit", edit_customer_path(@customer) %>
+
+<%= link_to 'Delete', customer_path(@customer),
+                                    method: :delete,
+                                    data: {confirm: "confirm delete of #{@customer.name}"} %>
+
 <%= link_to "Back to Customer List", customers_path %>

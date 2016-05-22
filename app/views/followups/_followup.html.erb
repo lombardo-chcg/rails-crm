@@ -1,0 +1,12 @@
+<p>
+  <em>comment:</em> <%= followup.comments %>
+</p>
+
+<p>
+  <em>date:</em> <%= time_ago_in_words(followup.created_at) %>
+</p>
+
+<%= link_to "Delete", [followup.customer, followup],
+                      method: :delete,
+                      data: { confirm: 'delete this follow up?'} %>
+
